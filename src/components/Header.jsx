@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import MobileMenu from './MobileMenu';
-import logo from '../assets/images/logo.png'; 
+import logo from '../assets/images/logo2.png'; 
 
 const Header = () => {
   const [mobileMenuActive, setMobileMenuActive] = useState(false);
