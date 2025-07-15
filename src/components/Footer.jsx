@@ -20,7 +20,7 @@ const Footer = () => {
             <h3>Liên Hệ</h3>
             <p>Email: info@samthiennhien.vn</p>
             <p>Hotline: 0123 456 789</p>
-            <p>Địa chỉ: 123 Đường Sâm, TP. Hà Nội</p>
+            <p>Địa chỉ: 33 Hải hồ</p>
             <div className="social-links">
               <a href="#" className="social-link" aria-label="Facebook">FB</a>
               <a href="#" className="social-link" aria-label="YouTube">YT</a>

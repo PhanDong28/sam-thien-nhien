@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import MobileMenu from './MobileMenu';
+import logo from '../assets/images/logo.png'; 
 
 const Header = () => {
   const [mobileMenuActive, setMobileMenuActive] = useState(false);
@@ -11,7 +12,10 @@ const Header = () => {
   return (
     <header>
       <nav>
-        <div className="logo">🌿 Sâm Thiên Nhiên</div>
+        <div className="logo">
+          <img src={logo} alt="Sâm Thiên Nhiên Logo" width="100" height="40" />
+        </div>
+
         <ul className="nav-links" role="navigation">
           <li><a href="#home" aria-label="Trang chủ">Trang chủ</a></li>
           <li><a href="#about" aria-label="Về chúng tôi">Về chúng tôi</a></li>

@@ -1,5 +1,3 @@
-/* style.css */
-
 /* Reset và Base Styles */
 * {
     margin: 0;
@@ -10,7 +8,8 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #2C2C2C; /* Text chính - Dark Charcoal */
+    background: #F4EFE6; /* Tự nhiên – nền - Herbal Beige */
     overflow-x: hidden;
 }
 
@@ -19,10 +18,10 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(135deg, #FFE066 0%, #FFF200 100%);
+    background: #6B1E1E; /* Màu chủ đạo - Deep Burgundy */
     z-index: 1000;
     padding: 0.8rem 0;
-    box-shadow: 0 4px 20px rgba(255, 224, 102, 0.4);
+    box-shadow: 0 4px 20px rgba(165, 142, 124, 0.4); /* Phụ – trung tính - Warm Taupe với opacity */
     transition: all 0.3s ease;
 }
 
@@ -36,10 +35,21 @@ nav {
 }
 
 .logo {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #FF6B35;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+.logo img {
+    height: 30px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
 }
 
 .nav-links {
@@ -49,7 +59,7 @@ nav {
 }
 
 .nav-links a {
-    color: #333;
+    color: #ffffff; /* Text chính - Dark Charcoal */
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
@@ -64,7 +74,7 @@ nav {
     left: 0;
     width: 0;
     height: 2px;
-    background: #FF6B35;
+    background: #C9A14A; /* Nhấn – cao cấp - Gold Accent */
     transition: width 0.3s ease;
 }
 
@@ -73,13 +83,13 @@ nav {
 }
 
 .nav-links a:hover {
-    color: #FF6B35;
+    color: #C9A14A; /* Nhấn – cao cấp - Gold Accent */
 }
 
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(135deg, #FFE066 0%, #FFF200 30%, #FFFFFF 70%, #F8F8F8 100%);
+    background: linear-gradient(135deg, #6B1E1E 0%, #F4EFE6 70%); /* Màu chủ đạo + Tự nhiên – nền */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,7 +105,7 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23FF6B35" opacity="0.1"/></svg>') repeat;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%236B1E1E" opacity="0.1"/></svg>') repeat;
     animation: float 20s infinite linear;
 }
 
@@ -113,22 +123,20 @@ nav {
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(45deg, #FF6B35, #FFE066);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #6B1E1E; /* Màu chủ đạo - Deep Burgundy */
     animation: slideInUp 1s ease-out;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
-    color: #666;
+    color: #777777; /* Text phụ - Gray */
     animation: slideInUp 1s ease-out 0.2s both;
 }
 
 .cta-button {
-    background: linear-gradient(45deg, #FF6B35, #FFE066);
-    color: white;
+    background: #C9A14A; /* Nhấn – cao cấp - Gold Accent */
+    color: #2C2C2C; /* Text chính - Dark Charcoal */
     padding: 1rem 2.5rem;
     border: none;
     border-radius: 50px;
@@ -138,30 +146,19 @@ nav {
     text-decoration: none;
     display: inline-block;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 8px 20px rgba(165, 142, 124, 0.3); /* Phụ – trung tính - Warm Taupe */
     animation: slideInUp 1s ease-out 0.4s both;
 }
 
 .cta-button:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(255, 107, 53, 0.4);
-}
-
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    box-shadow: 0 12px 30px rgba(165, 142, 124, 0.4);
 }
 
 /* Stats Section */
 .stats {
     padding: 3rem 0;
-    background: linear-gradient(135deg, #FFF200 0%, #FFE066 100%);
+    background: #F4EFE6; /* Tự nhiên – nền - Herbal Beige */
 }
 
 .stats-grid {
@@ -176,9 +173,10 @@ nav {
 .stat-item {
     text-align: center;
     padding: 1.5rem;
-    background: white;
+    background: #FFFFFF; /* Nền trắng cho contrast */
+    border: 1px solid #A58E7C; /* Phụ – trung tính - Warm Taupe */
     border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(165, 142, 124, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -189,20 +187,20 @@ nav {
 .stat-number {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #FF6B35;
+    color: #6B1E1E; /* Màu chủ đạo - Deep Burgundy */
     margin-bottom: 0.5rem;
 }
 
 .stat-label {
     font-size: 1rem;
-    color: #666;
+    color: #777777; /* Text phụ - Gray */
     font-weight: 500;
 }
 
 /* Features Section */
 .features {
     padding: 4rem 0;
-    background: #FFFFFF;
+    background: #F4EFE6; /* Tự nhiên – nền - Herbal Beige */
 }
 
 .container {
@@ -215,7 +213,7 @@ nav {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #FF6B35;
+    color: #6B1E1E; /* Màu chủ đạo - Deep Burgundy */
     position: relative;
 }
 
@@ -227,7 +225,7 @@ nav {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: linear-gradient(45deg, #FF6B35, #FFE066);
+    background: #C9A14A; /* Nhấn – cao cấp - Gold Accent */
     border-radius: 2px;
 }
 
@@ -241,41 +239,41 @@ nav {
 .feature-card {
     background: #FFFFFF;
     padding: 2rem;
+    border: 1px solid #A58E7C; /* Phụ – trung tính - Warm Taupe */
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(165, 142, 124, 0.1);
     transition: all 0.3s ease;
-    border: 2px solid transparent;
 }
 
 .feature-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    border-color: #FFE066;
+    box-shadow: 0 15px 40px rgba(165, 142, 124, 0.15);
+    border-color: #C9A14A; /* Nhấn – cao cấp - Gold Accent */
 }
 
 .feature-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(45deg, #FF6B35, #FFE066);
+    background: #C9A14A; /* Nhấn – cao cấp - Gold Accent */
     border-radius: 50%;
     margin: 0 auto 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    color: white;
-    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+    color: #2C2C2C; /* Text chính - Dark Charcoal */
+    box-shadow: 0 8px 20px rgba(165, 142, 124, 0.3);
 }
 
 .feature-card h3 {
     font-size: 1.4rem;
     margin-bottom: 0.8rem;
-    color: #333;
+    color: #6B1E1E; /* Màu chủ đạo - Deep Burgundy */
 }
 
 .feature-card p {
-    color: #666;
+    color: #777777; /* Text phụ - Gray */
     line-height: 1.6;
     font-size: 1rem;
 }
@@ -283,7 +281,7 @@ nav {
 /* About Section */
 .about {
     padding: 4rem 0;
-    background: linear-gradient(135deg, #F8F8F8 0%, #FFFFFF 100%);
+    background: #F4EFE6; /* Tự nhiên – nền - Herbal Beige */
 }
 
 .about-content {
@@ -299,13 +297,13 @@ nav {
 .about-text h2 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
-    color: #FF6B35;
+    color: #6B1E1E; /* Màu chủ đạo - Deep Burgundy */
 }
 
 .about-text p {
     font-size: 1rem;
     margin-bottom: 1rem;
-    color: #666;
+    color: #777777; /* Text phụ - Gray */
     line-height: 1.6;
 }
 
@@ -322,7 +320,7 @@ nav {
     transform: translate(-50%, -50%);
     width: 300px;
     height: 300px;
-    background: linear-gradient(45deg, #FFE066, #FFF200);
+    background: #C9A14A; /* Nhấn – cao cấp - Gold Accent */
     border-radius: 50%;
     opacity: 0.2;
     animation: pulse 3s infinite;
@@ -331,24 +329,24 @@ nav {
 .about-placeholder {
     width: 250px;
     height: 250px;
-    background: linear-gradient(45deg, #FF6B35, #FFE066);
+    background: #6B1E1E; /* Màu chủ đạo - Deep Burgundy */
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #F4EFE6; /* Tự nhiên – nền - Herbal Beige */
     font-size: 1.1rem;
     font-weight: bold;
     margin: 0 auto;
     position: relative;
     z-index: 2;
-    box-shadow: 0 15px 30px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 15px 30px rgba(165, 142, 124, 0.3);
 }
 
 /* Product Section */
 .product-showcase {
     padding: 4rem 0;
-    background: #FFFFFF;
+    background: #F4EFE6; /* Tự nhiên – nền - Herbal Beige */
 }
 
 .product-grid {
@@ -360,26 +358,26 @@ nav {
 
 .product-card {
     background: #FFFFFF;
+    border: 1px solid #A58E7C; /* Phụ – trung tính - Warm Taupe */
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(165, 142, 124, 0.1);
     transition: all 0.3s ease;
-    border: 2px solid transparent;
 }
 
 .product-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    border-color: #FFE066;
+    box-shadow: 0 15px 40px rgba(165, 142, 124, 0.15);
+    border-color: #C9A14A; /* Nhấn – cao cấp - Gold Accent */
 }
 
 .product-image {
     height: 180px;
-    background: linear-gradient(45deg, #FFE066, #FFF200);
+    background: #6B1E1E; /* Màu chủ đạo - Deep Burgundy */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #333;
+    color: #F4EFE6; /* Tự nhiên – nền - Herbal Beige */
     font-size: 1.1rem;
     font-weight: bold;
 }
@@ -391,26 +389,26 @@ nav {
 .product-title {
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
-    color: #FF6B35;
+    color: #6B1E1E; /* Màu chủ đạo - Deep Burgundy */
 }
 
 .product-price {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #333;
+    color: #2C2C2C; /* Text chính - Dark Charcoal */
     margin-bottom: 0.8rem;
 }
 
 .product-description {
-    color: #666;
+    color: #777777; /* Text phụ - Gray */
     margin-bottom: 1rem;
     line-height: 1.6;
     font-size: 0.9rem;
 }
 
 .product-button {
-    background: linear-gradient(45deg, #FF6B35, #FFE066);
-    color: white;
+    background: #C9A14A; /* Nhấn – cao cấp - Gold Accent */
+    color: #2C2C2C; /* Text chính - Dark Charcoal */
     padding: 0.7rem 1.5rem;
     border: none;
     border-radius: 20px;
@@ -423,13 +421,13 @@ nav {
 
 .product-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 8px 20px rgba(165, 142, 124, 0.3);
 }
 
 /* Process Section */
 .process {
     padding: 4rem 0;
-    background: linear-gradient(135deg, #F8F8F8 0%, #FFFFFF 100%);
+    background: #F4EFE6; /* Tự nhiên – nền - Herbal Beige */
 }
 
 .process-steps {
@@ -442,9 +440,10 @@ nav {
 .process-step {
     text-align: center;
     padding: 1.5rem;
-    background: white;
+    background: #FFFFFF;
+    border: 1px solid #A58E7C; /* Phụ – trung tính - Warm Taupe */
     border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(165, 142, 124, 0.1);
     position: relative;
 }
 
@@ -456,32 +455,32 @@ nav {
     transform: translateX(-50%);
     width: 16px;
     height: 16px;
-    background: linear-gradient(45deg, #FF6B35, #FFE066);
+    background: #C9A14A; /* Nhấn – cao cấp - Gold Accent */
     border-radius: 50%;
 }
 
 .step-number {
     width: 50px;
     height: 50px;
-    background: linear-gradient(45deg, #FF6B35, #FFE066);
+    background: #6B1E1E; /* Màu chủ đạo - Deep Burgundy */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.3rem;
     font-weight: bold;
-    color: white;
+    color: #F4EFE6; /* Tự nhiên – nền - Herbal Beige */
     margin: 0 auto 0.8rem;
 }
 
 .step-title {
     font-size: 1.2rem;
     margin-bottom: 0.8rem;
-    color: #FF6B35;
+    color: #6B1E1E; /* Màu chủ đạo - Deep Burgundy */
 }
 
 .step-description {
-    color: #666;
+    color: #777777; /* Text phụ - Gray */
     line-height: 1.6;
     font-size: 0.9rem;
 }
@@ -489,7 +488,7 @@ nav {
 /* Testimonials Section */
 .testimonials {
     padding: 4rem 0;
-    background: linear-gradient(135deg, #FFE066 0%, #FFF200 100%);
+    background: #6B1E1E; /* Màu chủ đạo - Deep Burgundy */
 }
 
 .testimonials-grid {
@@ -500,10 +499,11 @@ nav {
 }
 
 .testimonial-card {
-    background: white;
+    background: #FFFFFF;
     padding: 2rem;
+    border: 1px solid #A58E7C; /* Phụ – trung tính - Warm Taupe */
     border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(165, 142, 124, 0.1);
     position: relative;
     transition: transform 0.3s ease;
 }
@@ -518,26 +518,26 @@ nav {
     top: -15px;
     left: 25px;
     font-size: 4rem;
-    color: #FFE066;
+    color: #C9A14A; /* Nhấn – cao cấp - Gold Accent */
     opacity: 0.5;
 }
 
 .testimonial-text {
     font-style: italic;
     margin-bottom: 1rem;
-    color: #666;
+    color: #777777; /* Text phụ - Gray */
     font-size: 1rem;
     line-height: 1.6;
 }
 
 .testimonial-author {
     font-weight: bold;
-    color: #FF6B35;
+    color: #6B1E1E; /* Màu chủ đạo - Deep Burgundy */
     font-size: 1rem;
 }
 
 .testimonial-rating {
-    color: #FFE066;
+    color: #C9A14A; /* Nhấn – cao cấp - Gold Accent */
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
 }
@@ -545,7 +545,7 @@ nav {
 /* FAQ Section */
 .faq {
     padding: 4rem 0;
-    background: #FFFFFF;
+    background: #F4EFE6; /* Tự nhiên – nền - Herbal Beige */
 }
 
 .faq-list {
@@ -554,25 +554,27 @@ nav {
 }
 
 .faq-item {
-    background: white;
+    background: #FFFFFF;
+    border: 1px solid #A58E7C; /* Phụ – trung tính - Warm Taupe */
     border-radius: 15px;
     margin-bottom: 0.8rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(165, 142, 124, 0.1);
     overflow: hidden;
 }
 
 .faq-question {
     padding: 1rem;
-    background: linear-gradient(45deg, #FFE066, #FFF200);
+    background: #6B1E1E; /* Màu chủ đạo - Deep Burgundy */
     cursor: pointer;
     font-weight: bold;
-    color: #333;
+    color: #F4EFE6; /* Tự nhiên – nền - Herbal Beige */
     font-size: 1rem;
     transition: all 0.3s ease;
 }
 
 .faq-question:hover {
-    background: linear-gradient(45deg, #FFF200, #FFE066);
+    background: #C9A14A; /* Nhấn – cao cấp - Gold Accent */
+    color: #2C2C2C; /* Text chính - Dark Charcoal */
 }
 
 .faq-answer {
@@ -580,7 +582,7 @@ nav {
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease;
-    background: white;
+    background: #FFFFFF;
 }
 
 .faq-answer.active {
@@ -589,7 +591,7 @@ nav {
 }
 
 .faq-answer p {
-    color: #666;
+    color: #777777; /* Text phụ - Gray */
     line-height: 1.6;
     font-size: 0.9rem;
 }
@@ -597,7 +599,7 @@ nav {
 /* Newsletter Section */
 .newsletter {
     padding: 3rem 0;
-    background: linear-gradient(135deg, #F8F8F8 0%, #FFFFFF 100%);
+    background: #F4EFE6; /* Tự nhiên – nền - Herbal Beige */
     text-align: center;
 }
 
@@ -610,13 +612,13 @@ nav {
 .newsletter h2 {
     font-size: 2rem;
     margin-bottom: 0.8rem;
-    color: #FF6B35;
+    color: #6B1E1E; /* Màu chủ đạo - Deep Burgundy */
 }
 
 .newsletter p {
     font-size: 1rem;
     margin-bottom: 1.5rem;
-    color: #666;
+    color: #777777; /* Text phụ - Gray */
 }
 
 .newsletter-form {
@@ -629,21 +631,22 @@ nav {
 .newsletter-input {
     flex: 1;
     padding: 0.8rem;
-    border: 2px solid #FFE066;
+    border: 2px solid #A58E7C; /* Phụ – trung tính - Warm Taupe */
     border-radius: 20px;
     font-size: 0.9rem;
     outline: none;
     transition: all 0.3s ease;
+    background: #FFFFFF;
 }
 
 .newsletter-input:focus {
-    border-color: #FF6B35;
-    box-shadow: 0 0 8px rgba(255, 107, 53, 0.3);
+    border-color: #C9A14A; /* Nhấn – cao cấp - Gold Accent */
+    box-shadow: 0 0 8px rgba(201, 161, 74, 0.3);
 }
 
 .newsletter-button {
-    background: linear-gradient(45deg, #FF6B35, #FFE066);
-    color: white;
+    background: #C9A14A; /* Nhấn – cao cấp - Gold Accent */
+    color: #2C2C2C; /* Text chính - Dark Charcoal */
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 20px;
@@ -655,13 +658,13 @@ nav {
 
 .newsletter-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 8px 20px rgba(165, 142, 124, 0.3); /* Phụ – trung tính - Warm Taupe */
 }
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, #333 0%, #444 100%);
-    color: white;
+    background: #6B1E1E; /* Màu chủ đạo - Deep Burgundy */
+    color: #F4EFE6; /* Tự nhiên – nền - Herbal Beige */
     padding: 3rem 0 1.5rem;
 }
 
@@ -676,12 +679,12 @@ footer {
 
 .footer-section h3 {
     margin-bottom: 1rem;
-    color: #FFE066;
+    color: #C9A14A; /* Nhấn – cao cấp - Gold Accent */
     font-size: 1.2rem;
 }
 
 .footer-section p, .footer-section a {
-    color: #ccc;
+    color: #F4EFE6; /* Tự nhiên – nền - Herbal Beige */
     text-decoration: none;
     line-height: 1.6;
     font-size: 0.9rem;
@@ -689,7 +692,7 @@ footer {
 }
 
 .footer-section a:hover {
-    color: #FFE066;
+    color: #C9A14A; /* Nhấn – cao cấp - Gold Accent */
 }
 
 .social-links {
@@ -701,12 +704,12 @@ footer {
 .social-link {
     width: 35px;
     height: 35px;
-    background: linear-gradient(45deg, #FF6B35, #FFE066);
+    background: #C9A14A; /* Nhấn – cao cấp - Gold Accent */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #2C2C2C; /* Text chính - Dark Charcoal */
     text-decoration: none;
     font-size: 0.9rem;
     transition: all 0.3s ease;
@@ -714,14 +717,14 @@ footer {
 
 .social-link:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 8px 20px rgba(165, 142, 124, 0.3); /* Phụ – trung tính - Warm Taupe */
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 1.5rem;
-    border-top: 1px solid #555;
-    color: #999;
+    border-top: 1px solid #A58E7C; /* Phụ – trung tính - Warm Taupe */
+    color: #F4EFE6; /* Tự nhiên – nền - Herbal Beige */
     font-size: 0.9rem;
 }
 
@@ -731,7 +734,7 @@ footer {
     background: none;
     border: none;
     font-size: 1.5rem;
-    color: #333;
+    color: #2C2C2C; /* Text chính - Dark Charcoal */
     cursor: pointer;
 }
 
@@ -741,7 +744,7 @@ footer {
     left: -100%;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(135deg, #FFE066 0%, #FFF200 100%);
+    background: #6B1E1E; /* Màu chủ đạo - Deep Burgundy */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -764,7 +767,7 @@ footer {
 }
 
 .mobile-menu a {
-    color: #333;
+    color: #F4EFE6; /* Tự nhiên – nền - Herbal Beige */
     text-decoration: none;
     font-size: 1.3rem;
     font-weight: bold;
@@ -777,7 +780,7 @@ footer {
     background: none;
     border: none;
     font-size: 1.8rem;
-    color: #333;
+    color: #F4EFE6; /* Tự nhiên – nền - Herbal Beige */
     cursor: pointer;
 }
 
@@ -874,6 +877,11 @@ footer {
 
     .stats-grid {
         grid-template-columns: 1fr;
+    }
+
+    .logo img {
+        height: 25px;
+        max-width: 90px;
     }
 }
 
