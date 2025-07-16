@@ -16,104 +16,24 @@ const Newsletter = () => {
     setIsLoading(true);
     setMessage('');
     
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyr9L4rNgibrjjCtoJl9e-CWN5Bguic6Q57cI52rqSWcuNsZcKykrZFT4x6cJXroCONtQ/exec';
-    
-    const data = {
-      email: email.trim(),
-      timestamp: new Date().toISOString(),
-      source: 'Newsletter signup'
-    };
-    
-    console.log('Sending data:', data);
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyrbMWAkehtSZ0sbo4WdmJXCU9k0M1Yj4FVhuYQlf6sOBqOdTcU_z-qmCmsGy4pelA-Sg/exec';
     
     try {
-      const response = await fetch(SCRIPT_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-        mode: 'cors',
-      });
+      const getUrl = `${SCRIPT_URL}?email=${encodeURIComponent(email)}&timestamp=${new Date().toISOString()}&source=Newsletter`;
       
-      console.log('Response status:', response.status);
-      console.log('Response headers:', [...response.headers.entries()]);
+      const response = await fetch(getUrl);
+      const result = await response.json();
       
-      // Kiểm tra response status
-      if (!response.ok) {
-        console.error('HTTP error:', response.status, response.statusText);
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      
-      // Lấy response text trước để debug
-      const responseText = await response.text();
-      console.log('Raw response:', responseText);
-      
-      // Thử parse JSON
-      let result;
-      try {
-        result = JSON.parse(responseText);
-      } catch (parseError) {
-        console.error('JSON parse error:', parseError);
-        console.error('Response text:', responseText);
-        throw new Error('Invalid JSON response from server');
-      }
-      
-      console.log('Parsed result:', result);
-      
-      // Xử lý kết quả
       if (result.success) {
-        setMessage('Đăng ký thành công! Cảm ơn bạn đã đăng ký nhận tin.');
+        setMessage('✅ Đăng ký thành công!');
         setEmail('');
       } else {
-        setMessage('Lỗi: ' + (result.error || 'Không thể đăng ký'));
+        setMessage(`❌ ${result.error || 'Lỗi không xác định'}`);
       }
       
     } catch (error) {
-      console.error('Fetch error:', error);
-      
-      // Thử GET fallback
-      try {
-        console.log('Trying GET fallback...');
-        const params = new URLSearchParams({
-          email: email.trim(),
-          timestamp: new Date().toISOString(),
-          source: 'Newsletter signup (GET)'
-        });
-        
-        const getResponse = await fetch(`${SCRIPT_URL}?${params}`, {
-          method: 'GET',
-          mode: 'cors',
-        });
-        
-        console.log('GET response status:', getResponse.status);
-        
-        if (getResponse.ok) {
-          const getResponseText = await getResponse.text();
-          console.log('GET raw response:', getResponseText);
-          
-          try {
-            const getResult = JSON.parse(getResponseText);
-            console.log('GET parsed result:', getResult);
-            
-            if (getResult.success) {
-              setMessage('Đăng ký thành công! Cảm ơn bạn đã đăng ký nhận tin.');
-              setEmail('');
-            } else {
-              setMessage('Lỗi: ' + (getResult.error || 'Không thể đăng ký'));
-            }
-          } catch (getParseError) {
-            console.error('GET JSON parse error:', getParseError);
-            setMessage('Đăng ký có thể đã thành công, vui lòng kiểm tra lại.');
-          }
-        } else {
-          throw new Error('GET request failed');
-        }
-        
-      } catch (fallbackError) {
-        console.error('GET fallback error:', fallbackError);
-        setMessage('Đăng ký có thể đã thành công, vui lòng kiểm tra lại hoặc liên hệ support.');
-      }
+      console.error('Error:', error);
+      setMessage('⚠️ Đăng ký có thể đã thành công, vui lòng kiểm tra lại');
     } finally {
       setIsLoading(false);
     }
@@ -150,9 +70,11 @@ const Newsletter = () => {
 
         {message && (
           <div className={`p-4 rounded-lg ${
-            message.includes('thành công') 
+            message.includes('✅') 
               ? 'bg-green-100 text-green-700 border border-green-200' 
-              : 'bg-red-100 text-red-700 border border-red-200'
+              : message.includes('❌')
+                ? 'bg-red-100 text-red-700 border border-red-200'
+                : 'bg-yellow-100 text-yellow-700 border border-yellow-200'
           }`}>
             {message}
           </div>
