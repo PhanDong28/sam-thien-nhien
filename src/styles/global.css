@@ -27,7 +27,7 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -372,7 +372,7 @@ nav {
 }
 
 .product-image {
-    height: 180px;
+    height: 400px;
     background: #6B1E1E; /* Màu chủ đạo - Deep Burgundy */
     display: flex;
     align-items: center;
@@ -871,7 +871,7 @@ footer {
     }
 
     .product-image {
-        height: 150px;
+        height: 300px;
         font-size: 1rem;
     }
 

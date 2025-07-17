@@ -1,4 +1,8 @@
 import React, { useEffect } from 'react';
+import pro1 from '../assets/images/pro1.jpg';
+import pro2 from '../assets/images/pro2.jpg'; 
+import pro3 from '../assets/images/pro3.jpg'; 
+import pro4 from '../assets/images/pro4.jpg';  
 
 
 const Products = () => {
@@ -7,19 +11,19 @@ const Products = () => {
       name: 'Sâm Tươi Nguyên Củ',
       price: '500.000 VNĐ/kg',
       description: 'Sâm tươi được thu hoạch từ trang trại tự nhiên, giữ nguyên dưỡng chất và hương vị đặc trưng.',
-      image: '/images/fresh-ginseng.jpg', // Replace with actual image path
+      image: pro4,
     },
     {
       name: 'Sâm Khô Thượng Hạng',
       price: '1.200.000 VNĐ/hộp',
       description: 'Sâm khô được chế biến tỉ mỉ, bảo toàn tối đa dược tính, tiện lợi sử dụng hàng ngày.',
-      image: '/images/dried-ginseng.jpg',
+      image: pro2,
     },
     {
       name: 'Trà Sâm Tự Nhiên',
       price: '250.000 VNĐ/hộp',
       description: 'Trà sâm thơm ngon, hỗ trợ thư giãn và tăng cường sức khỏe, phù hợp mọi lứa tuổi.',
-      image: '/images/ginseng-tea.jpg',
+      image: pro3,
     },
   ];
 
